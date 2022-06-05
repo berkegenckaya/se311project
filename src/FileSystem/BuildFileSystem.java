@@ -1,20 +1,21 @@
+package FileSystem;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BuildFileSystem {
     private ArrayList<Directory> directories;
     Scanner sc = new Scanner(System.in);
-
+    OS os = OS.getInstance();
     public void createFileSystem(FileSystemFactory systemFactory){
-        directories = new ArrayList<Directory>();
         Directory directory = createDirectory(systemFactory);
-        directories.add(directory);
+        os.getDirectoriesList().add(directory);
         createFile(systemFactory, directory);
     }
 
-    void displayParts() {
-        System.out.println("\tListing Parts\n\t-------------");
-        for(Directory directory: directories){
+    public void displayParts() {
+        System.out.println("\tListing Directories\n\t-------------");
+        for(Directory directory: os.getDirectoriesList()){
             System.out.println("+" + directory.displayName());
             directory.displayList();
         }

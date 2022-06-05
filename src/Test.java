@@ -1,3 +1,7 @@
+import FileSystem.BSDFactory;
+import FileSystem.BuildFileSystem;
+import FileSystem.FileSystemFactory;
+import FileSystem.LinuxFactory;
 
 public class Test {
     public static void main(String[] args) {
@@ -7,5 +11,10 @@ public class Test {
         BuildFileSystem buildFileSystem = new BuildFileSystem();
         buildFileSystem.createFileSystem(linuxFactory);
         buildFileSystem.displayParts();
+
+        buildFileSystem.createFileSystem(bsdFactory);
+        buildFileSystem.displayParts();
+
+
     }
 }

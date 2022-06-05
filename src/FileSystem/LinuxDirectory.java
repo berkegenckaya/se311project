@@ -1,3 +1,5 @@
+package FileSystem;
+
 import java.util.ArrayList;
 
 public class LinuxDirectory extends Directory {
@@ -6,6 +8,6 @@ public class LinuxDirectory extends Directory {
         this.name = name;
         directoryType = "Linux";
         files = new ArrayList<File>();
-        System.out.println("Linux Directory created...");
+        System.out.println("Linux FileSystem.Directory created...");
     }
 }

@@ -1,3 +1,5 @@
+package FileSystem;
+
 import java.util.ArrayList;
 
 public abstract class Directory extends FileSystem {
@@ -14,7 +16,6 @@ public abstract class Directory extends FileSystem {
         return directoryType;
     }
 
-
     public ArrayList<File> getFiles() {
         return files;
     }
@@ -26,6 +27,4 @@ public abstract class Directory extends FileSystem {
     public void addFile(File file){
         this.files.add(file);
     }
-
-
 }

@@ -1,4 +1,6 @@
-abstract class File extends FileSystem {
+package FileSystem;
+
+public abstract class File extends FileSystem {
     protected String name;
     protected String fileType;
 

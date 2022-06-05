@@ -1,3 +1,5 @@
+package FileSystem;
+
 import java.util.ArrayList;
 
 public class NTDirectory extends Directory{
@@ -6,7 +8,7 @@ public class NTDirectory extends Directory{
         this.name = name;
         directoryType = "NT";
         files = new ArrayList<File>();
-        System.out.println("NT Directory created...");
+        System.out.println("NT FileSystem.Directory created...");
     }
 
 
