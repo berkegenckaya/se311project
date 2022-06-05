@@ -6,16 +6,17 @@ import java.util.Scanner;
 public class BuildFileSystem {
     private ArrayList<Directory> directories;
     Scanner sc = new Scanner(System.in);
-    OS os = OS.getInstance();
     public void createFileSystem(FileSystemFactory systemFactory){
+        directories = new ArrayList<Directory>();
         Directory directory = createDirectory(systemFactory);
-        os.getDirectoriesList().add(directory);
+
+        directories.add(directory);
         createFile(systemFactory, directory);
     }
 
     public void displayParts() {
         System.out.println("\tListing Directories\n\t-------------");
-        for(Directory directory: os.getDirectoriesList()){
+        for(Directory directory: directories){
             System.out.println("+" + directory.displayName());
             directory.displayList();
         }

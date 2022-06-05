@@ -7,4 +7,9 @@ public class NTFile extends File {
         this.name = name;
         System.out.println("NT FileSystem.File Created...");
     }
+
+    public int printf(byte[] charArray, File handle) {
+        System.out.println("For BSD '" + charArray.toString() + "' is texted to NT");
+        return 0;
+    }
 }
