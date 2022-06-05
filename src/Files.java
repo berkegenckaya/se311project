@@ -1,4 +1,4 @@
-public abstract class Files extends FileSystemElement{
+abstract class Files extends FileSystemElement{
     protected String name;
     protected String fileType;
 

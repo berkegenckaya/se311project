@@ -2,17 +2,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BuildFileSystem {
-    private ArrayList<FileSystem> fileSystems;
+    private ArrayList<FileSystemElement> fileSystems;
     Scanner sc = new Scanner(System.in);
     public void createFileSystem(FileSystemFactory systemFactory){
-        fileSystems = new ArrayList<FileSystem>();
+        fileSystems = new ArrayList<FileSystemElement>();
         Directory directory = createDirectory(systemFactory);
         fileSystems.add(directory);
     }
 
     void displayParts() {
-        //System.out.println("\tListing Parts\n\t-------------");
-        //systems.forEach(p  -> System.out.println("\t"+ p.displayName()));
+        System.out.println("\tListing Parts\n\t-------------");
+        fileSystems.forEach(p  -> System.out.println("\t"+ p.displayName()));
     }
 
     public Directory createDirectory(FileSystemFactory systemFactory){
