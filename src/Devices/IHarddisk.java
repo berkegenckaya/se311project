@@ -1,5 +1,9 @@
 package Devices;
 
-public interface IHarddisk {
-    void deviceRest();
+import FileSystem.FileSystem;
+
+public interface IHarddisk{
+    void harddiskReset();
+    void writeFileSystemToHarddisk(FileSystem fileSystem);
+    void readFileSystemFromHarddisk();
 }

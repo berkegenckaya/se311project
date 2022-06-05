@@ -16,4 +16,9 @@ public abstract class File extends FileSystem {
     public String displayName() {
         return name;
     }
+
+    @Override
+    public void displayList() {
+
+    }
 }

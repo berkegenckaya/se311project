@@ -1,6 +1,6 @@
 package Devices;
 
-public interface Command {
+public interface Command{
     void Execute();
-
+    void Log();
 }

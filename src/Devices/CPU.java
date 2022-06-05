@@ -6,7 +6,7 @@ public class CPU extends Device implements ICPU {
     }
 
     @Override
-    public void deviceReset() {
+    public void cpuReset() {
         System.out.println("All processes are terminated.");
     }
 

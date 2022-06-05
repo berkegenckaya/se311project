@@ -1,5 +1,5 @@
 package Devices;
 
-public interface ICPU {
-    void deviceReset();
+public interface ICPU{
+    void cpuReset();
 }

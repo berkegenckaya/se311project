@@ -1,5 +1,5 @@
 package Devices;
 
-public interface IDeviceReset {
+public interface IDeviceReset{
     void deviceReset();
 }

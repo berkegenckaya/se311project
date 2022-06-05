@@ -1,6 +1,8 @@
 package Devices;
 
-public class Device {
+import jdk.swing.interop.SwingInterOpUtils;
+
+public class Device implements IDeviceReset{
     private String name;
     private String model;
 
@@ -23,5 +25,10 @@ public class Device {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    @Override
+    public void deviceReset() {
+        System.out.println("Devise is resetted.");
     }
 }
