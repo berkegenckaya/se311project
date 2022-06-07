@@ -1,8 +1,4 @@
-package IOFeatures;
-
-import FileSystem.*;
-
-public class Adapter implements IOApi {
+class Adapter implements IOApi {
     private LinuxFile linuxAdaptee;
     private BSDFile bsdAdaptee;
     private NTFile ntAdaptee;
@@ -24,9 +20,9 @@ public class Adapter implements IOApi {
     public int fprintf(File handle, String str) {
         if (linuxAdaptee != null && linuxAdaptee.getFileType().equals("Linux")) {
             return linuxAdaptee.uprintf(str, handle);
-        } else if (bsdAdaptee != null && bsdAdaptee.getFileType().equals("BSD")  ) {
+        } else if (bsdAdaptee != null && bsdAdaptee.getFileType().equals("BSD")) {
             return bsdAdaptee.uprintf(str, handle);
-        } else if (ntAdaptee != null && ntAdaptee.getFileType().equals("NT")){
+        } else if (ntAdaptee != null && ntAdaptee.getFileType().equals("NT")) {
             byte[] charArray = str.getBytes();
             return ntAdaptee.printf(charArray, handle);
         } else {
@@ -35,3 +31,14 @@ public class Adapter implements IOApi {
         }
     }
 }
+
+interface IOApi {
+    int fprintf(File handle, String str);
+}
+
+class Utility {
+    public void Test(int a) {
+
+    }
+}
+

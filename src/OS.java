@@ -1,11 +1,4 @@
-package OS;
-
-import Devices.*;
-import FileSystem.*;
-
-import java.util.ArrayList;
-
-public class OS extends AbstractOS {
+public class OS extends Interrupt {
     private static OS instance = null;
 
     @Override
@@ -52,16 +45,16 @@ public class OS extends AbstractOS {
     public static void main(String[] args) {
 
         FileSystemFactory linuxFactory = new LinuxFactory();
-        //FileSystemFactory bsdFactory = new BSDFactory();
+        FileSystemFactory bsdFactory = new BSDFactory();
 
         BuildFileSystem buildFileSystem = new BuildFileSystem();
         buildFileSystem.createFileSystem(linuxFactory);
 
 
-        //buildFileSystem.createFileSystem(bsdFactory);
+        buildFileSystem.createFileSystem(bsdFactory);
         OS.instance.readTheHarddisk();
 
-        /*File handle = new LinuxFile("str");
+        File handle = new LinuxFile("str");
         IOApi linuxTarget = new Adapter(new LinuxFile("linux file"));
         IOApi bsdTarget = new Adapter(new BSDFile("bsd file"));
         IOApi ntTarget = new Adapter(new NTFile("nt file"));
@@ -80,6 +73,5 @@ public class OS extends AbstractOS {
         ut.Test(linux);
         ut.Test(bsd);
         ut.Test(nt);
-        */
     }
 }
