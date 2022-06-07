@@ -7,13 +7,12 @@ import java.util.Scanner;
 
 public class BuildFileSystem {
     private ArrayList<Directory> directories;
-    private OS os = OS.getInstance();//Singleton
     Scanner sc = new Scanner(System.in);
     public void createFileSystem(FileSystemFactory systemFactory){
         //directories = new ArrayList<Directory>();
         Directory directory = createDirectory(systemFactory);
         //directories.add(directory);
-        os.writeToHarddisk(directory);
+        OS.getInstance().writeToHarddisk(directory);
         createFile(systemFactory, directory);
     }
 

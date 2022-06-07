@@ -1,11 +1,12 @@
 package Devices;
+import OS.OS;
 
 public class OSShutdown implements Command {
     //osa ulaşılacak
 
     @Override
     public void Execute() {
-        //os.Shutdown();
+        OS.getInstance().Shutdown();
     }
 
     @Override

@@ -1,6 +1,12 @@
 package Devices;
 
+import OS.AbstractOS;
+import OS.OS;
+
 public class CPU extends Device implements ICPU {
+    private AbstractOS os;
+    private String osName;
+
     public CPU(String name, String model) {
         super(name, model);
     }
@@ -11,4 +17,10 @@ public class CPU extends Device implements ICPU {
     }
 
 
+    @Override
+    public void Update(AbstractOS abstractOS) {
+        os = abstractOS;
+        osName = abstractOS.getName();
+        System.out.println("CPU is interrupted.");
+    }
 }

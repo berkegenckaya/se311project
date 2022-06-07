@@ -5,17 +5,15 @@ import FileSystem.*;
 
 import java.util.ArrayList;
 
-public class OS {
+public class OS extends AbstractOS {
     private static OS instance = null;
-    private CPU cpu;
-    private Harddisk harddisk;
-    private IO io;
 
+    @Override
+    public void interruptHandled() {
+
+    }
 
     private OS(){
-        cpu = new CPU("AMD RYZEN", "5 5600X" );
-        harddisk = new Harddisk("Segate", "Barracuda" );
-        io = new IO("IO", "IO");
     }
 
     public static OS getInstance(){
@@ -45,6 +43,11 @@ public class OS {
     public void Log() {
 
     }
+
+
+
+
+        
 
     public static void main(String[] args) {
 

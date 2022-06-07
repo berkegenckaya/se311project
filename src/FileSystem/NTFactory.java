@@ -17,4 +17,14 @@ public class NTFactory extends FileSystemFactory{
     public Directory createDirectory(String name) {
         return new NTDirectory(name);
     }
+
+    @Override
+    public String displayName() {
+        return null;
+    }
+
+    @Override
+    public void displayList() {
+
+    }
 }

@@ -2,9 +2,14 @@ package Devices;
 
 import jdk.swing.interop.SwingInterOpUtils;
 
-public class Device implements IDeviceReset{
-    private String name;
-    private String model;
+import java.util.ArrayList;
+
+public abstract class Device implements IDeviceReset, Observer{
+
+    protected ArrayList<Device> devices = new ArrayList<Device>();
+
+    protected String name;
+    protected String model;
 
     public Device(String name, String model) {
         this.name = name;

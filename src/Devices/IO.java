@@ -1,7 +1,10 @@
 package Devices;
 
-public class IO extends Device implements IIO{
+import OS.AbstractOS;
 
+public class IO extends Device implements IIO{
+    private AbstractOS os;
+    private String osName;
     public IO(String name, String model) {
         super(name, model);
     }
@@ -9,5 +12,12 @@ public class IO extends Device implements IIO{
     @Override
     public void IOReset() {
         System.out.println("IO devices are disabled.");
+    }
+
+    @Override
+    public void Update(AbstractOS abstractOS) {
+        os = abstractOS;
+        osName = abstractOS.getName();
+        System.out.println("IO is interrupted.");
     }
 }

@@ -1,11 +1,14 @@
 package Devices;
 
 import FileSystem.*;
+import OS.AbstractOS;
 
 import java.util.ArrayList;
 
 public class Harddisk extends Device implements IHarddisk {
     private ArrayList<FileSystem> fileSystems;
+    private AbstractOS os;
+    private String osName;
 
     public Harddisk(String name, String model) {
         super(name, model);
@@ -41,5 +44,12 @@ public class Harddisk extends Device implements IHarddisk {
 
     public void setFileSystems(ArrayList<FileSystem> fileSystems) {
         this.fileSystems = fileSystems;
+    }
+
+    @Override
+    public void Update(AbstractOS abstractOS) {
+        os = abstractOS;
+        osName = abstractOS.getName();
+        System.out.println("Harddisk is interrupted.");
     }
 }

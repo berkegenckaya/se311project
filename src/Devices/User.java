@@ -3,7 +3,7 @@ package Devices;
 import java.util.ArrayList;
 
 
-public class User{
+public class User{//Invoker
     private int current;
     private ArrayList<Command> commands;
 
