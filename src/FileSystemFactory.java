@@ -1,7 +1,5 @@
 import java.nio.charset.StandardCharsets;
-import java.sql.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 abstract class FileSystemFactory extends FileSystem {
@@ -15,7 +13,7 @@ class NTFile extends File {
     public NTFile(String name) {
         fileType = "NT";
         this.name = name;
-        System.out.println("NT FileSystemFactory.File Created...");
+        System.out.println("NT File Created...");
     }
 
     public int printf(byte[] charArray, File handle) {
@@ -60,7 +58,7 @@ class LinuxDirectory extends Directory {
         this.name = name;
         directoryType = "Linux";
         files = new ArrayList<File>();
-        System.out.println("Linux FileSystemFactory.Directory created...");
+        System.out.println("Linux Directory created...");
     }
 }
 
@@ -100,7 +98,7 @@ class LinuxFile extends File {
     public LinuxFile(String name) {
         fileType = "Linux";
         this.name = name;
-        System.out.println("Linux FileSystemFactory.File Created...");
+        System.out.println("Linux File Created...");
     }
 
 
@@ -116,7 +114,7 @@ class NTDirectory extends Directory {
         this.name = name;
         directoryType = "NT";
         files = new ArrayList<File>();
-        System.out.println("NT FileSystemFactory.Directory created...");
+        System.out.println("NT Directory created...");
     }
 
 
@@ -134,7 +132,7 @@ class BSDDirectory extends Directory {
         this.name = name;
         directoryType = "BSD";
         files = new ArrayList<File>();
-        System.out.println("BSD FileSystemFactory.Directory created...");
+        System.out.println("BSD Directory created...");
     }
 }
 
@@ -194,7 +192,7 @@ class BSDFile extends File {
     public BSDFile(String name) {
         fileType = "BSD";
         this.name = name;
-        System.out.println("BSD FileSystemFactory.File Created...");
+        System.out.println("BSD File Created...");
     }
 
     public int uprintf(String str, File handle) {

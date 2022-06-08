@@ -60,8 +60,6 @@ public class OS extends Interrupt {
         IOApi ntTarget = new Adapter(new NTFile("nt file"));
 
 
-
-        System.out.println(handle.getFileType());
         File handle2 = new BSDFile("str");
         File handle3 = new NTFile("str");
 
